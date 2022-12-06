@@ -3,7 +3,7 @@ import {Link, NavLink} from 'react-router-dom'
 import { FiUser } from 'react-icons/fi'
 
 import {useAppSelector} from '../../hooks'
-import {traxo_large} from '../../assets'
+import {traxo_dark} from '../../assets'
 import avatar from '../../assets/images/avatar.jpg'
 
 const Navbar = () => {
@@ -11,12 +11,9 @@ const Navbar = () => {
 
   return (
     <div className='w-full flex items-center justify-between py-4 px-8 sticky top-0 left-0'>
-      <div className='flex flex-col items-center text-center'>
-        <div className='w-24'>
-          <img src={traxo_large} alt="traxo logo" className='w-full object-cover' />
-          <p className='text-[10px] text-secondary font-light'>Traxo Finances</p>
-        </div>
-      </div>
+      <Link to='/' className='w-24'>
+        <img src={traxo_dark} alt="traxo logo" className='w-full object-cover' />
+      </Link>
       <div>
         {!isLoggedIn ? (
           <div className='flex items-center gap-4'>

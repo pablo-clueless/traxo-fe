@@ -3,11 +3,15 @@ import {Link} from 'react-router-dom'
 import {FiFacebook, FiInstagram, FiLinkedin, FiTwitter, FiYoutube} from 'react-icons/fi'
 
 import {FOOTER_LINKS} from '../../constants/FOOTER-LINKS'
+import {traxo_light} from '../../assets'
 
 const Footer = () => {
   return (
     <div className='w-full flex flex-col py-4 px-8 bg-secondary'>
       <div className='w-full flex items-start gap-4 flex-wrap'>
+        <div className='w-[300px] flex flex-col'>
+          <img src={traxo_light} alt='traxo logo' className='w-[150px]' />
+        </div>
         {FOOTER_LINKS.map((item, index: number) => (
           <div key={index} className='flex flex-col gap-4'>
             <p className='w-[300px] text-white text-xl font-medium'>{item.heading}</p>
