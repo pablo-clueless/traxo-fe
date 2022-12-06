@@ -9,7 +9,7 @@ interface IUser {
 
 const initialState: IUser = {
     user: null,
-    isLoggedIn: false
+    isLoggedIn: true
 }
 
 const authSlice = createSlice({
