@@ -1,11 +1,12 @@
-import React, {Suspense} from 'react'
-import {Route, Routes} from 'react-router-dom'
+import React, { Suspense, useEffect } from 'react'
+import { Route, Routes } from 'react-router-dom'
 
-import {About, Contact, Home, Profile, Signup} from './pages'
-import {Footer, Loader, Navbar} from './components'
+import { About, Contact, Home, Profile, Signup } from './pages'
+import { Footer, Loader, Login, Navbar } from './components'
+import { useAppContext } from './hooks'
 
 const App = () => {
-  const currentMode:string = 'dark'
+  const { currentMode, isClicked } = useAppContext()
 
   return (
     <div className={`w-screen ${currentMode === 'dark' ? 'dark' : ''}`}>
@@ -22,6 +23,8 @@ const App = () => {
         </Routes>
       </Suspense>
       <Footer />
+
+      {isClicked.login && <Login />}
     </div>
   )
 }

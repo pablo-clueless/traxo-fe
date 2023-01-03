@@ -1,13 +1,16 @@
 import React from 'react'
-import {Link, NavLink} from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { FiUser } from 'react-icons/fi'
 
-import {useAppSelector} from '../../hooks'
-import {traxo_dark} from '../../assets'
+import { useAppSelector } from '../../hooks'
+import { traxo_dark } from '../../assets'
 import avatar from '../../assets/images/avatar.jpg'
+import { Button } from '../'
+import { useAppContext } from '../../hooks'
 
 const Navbar = () => {
   const { isLoggedIn, user } = useAppSelector(store => store.auth)
+  const { handleClicked } = useAppContext()
 
   return (
     <div className='w-full flex items-center justify-between py-4 px-8 sticky top-0 left-0'>
@@ -17,9 +20,8 @@ const Navbar = () => {
       <div>
         {!isLoggedIn ? (
           <div className='flex items-center gap-4'>
-            <Link to='/signup'>
-              sign up
-            </Link>
+            <Button label='Sign In' type='button' onClick={() => handleClicked('login')} />
+            <Button label='Sign Up' to='/signup' />
           </div>
         ) : (
           <div>

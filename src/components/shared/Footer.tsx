@@ -1,9 +1,9 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-import {FiFacebook, FiInstagram, FiLinkedin, FiTwitter, FiYoutube} from 'react-icons/fi'
+import { Link } from 'react-router-dom'
+import { FiFacebook, FiInstagram, FiLinkedin, FiTwitter, FiYoutube } from 'react-icons/fi'
 
-import {FOOTER_LINKS} from '../../constants/FOOTER-LINKS'
-import {traxo_light} from '../../assets'
+import { FOOTER_LINKS } from '../../constants/FOOTER-LINKS'
+import { traxo_light } from '../../assets'
 
 const Footer = () => {
   return (

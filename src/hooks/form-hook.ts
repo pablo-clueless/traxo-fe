@@ -1,9 +1,12 @@
-import {ChangeEvent, useReducer} from 'react'
+import { ChangeEvent, useReducer } from 'react'
+
+import { Validator } from '../libs/validators'
 
 export type Action = {
     type: string
     name: string
     value: string | number
+    validators?: Array<Validator>
 }
 
 export const useFormInputs = (initialState: any) => {
