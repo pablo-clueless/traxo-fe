@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { FiUser } from 'react-icons/fi'
 
-import { useAppSelector } from '../../hooks'
-import { traxo_dark } from '../../assets'
-import avatar from '../../assets/images/avatar.jpg'
-import { Button } from '../'
-import { useAppContext } from '../../hooks'
+// import { traxo_dark } from 'assets'
+import { traxo_dark } from 'assets'
+import avatar from 'assets/images/avatar.jpg'
+import { useAppContext, useAppSelector } from 'hooks'
+import Button from './Button'
 
 const Navbar = () => {
   const { isLoggedIn, user } = useAppSelector(store => store.auth)
