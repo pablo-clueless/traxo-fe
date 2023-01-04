@@ -17,6 +17,8 @@ export const useFormInputs = (initialState: any) => {
                     ...state,
                     [action.name]: action.value,
                 }
+            case 'RESET':
+                return initialState
             default:
                 return state
         }
@@ -32,5 +34,7 @@ export const useFormInputs = (initialState: any) => {
         dispatch({ type: 'CHANGE', name: e.target.name, value: e.target.value })
     }
 
-    return { inputs, handleChange }
+    const handleReset = () => dispatch({type: 'RESET', name: '', value: ''})
+    
+    return {inputs, handleChange, reset: handleReset}
 }

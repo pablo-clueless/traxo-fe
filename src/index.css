@@ -46,3 +46,7 @@ body {
 input:-webkit-autofill {
   transition: background-color 5000s ease-in-out 0s;
 }
+
+input[type='file']::-webkit-file-upload-button {
+  display: none;
+}
