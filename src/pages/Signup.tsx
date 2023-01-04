@@ -9,7 +9,7 @@ import { useFormInputs } from '../hooks'
 import { createUser } from '../services/auth'
 import { Button, InputField, Spinner } from '../components'
 
-const initialState = { firstName: '', lastName: '', email: '', password: '', confirm_password: '' }
+const initialState = { accessType: 'super-user', companyName: '', firstName: '', lastName: '', email: '', password: '', confirm_password: '' }
 
 const Signup = () => {
   const {inputs, handleChange, reset} = useFormInputs(initialState)
@@ -38,6 +38,7 @@ const Signup = () => {
           <InputField element='input' label='Firstname' name='firstName' onChange={handleChange} type='text' required />
           <InputField element='input' label='Lastname' name='lastName' onChange={handleChange} type='text' required />
           <InputField element='input' label='Email' name='email' onChange={handleChange} type='email' required />
+          <InputField element='input' label='Company Name' name='companyName' onChange={handleChange} type='text' required />
           <InputField element='input' label='Password' name='password' onChange={handleChange} type='password' required />
           <InputField element='input' label='Confirm Password' name='confirm_password' onChange={handleChange} type='password' required />
           <Button label={isLoading ? <Spinner /> : 'Submit'} type='submit' />
