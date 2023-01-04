@@ -5,9 +5,11 @@ export interface LoginCredentials {
 }
 
 export interface SignupCredentials {
+    accessType: 'super-user' | 'admin'
+    companyName: string
+    email: string
     firstName: string
     lastName: string
-    email: string
     password: string
 }
 
