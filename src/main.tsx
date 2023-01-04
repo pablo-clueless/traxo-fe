@@ -15,16 +15,16 @@ const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <GoogleOAuthProvider clientId={clientId}>
-      <BrowserRouter>
-        <QueryClientProvider client={queryClient}>
-          <Provider store={store}>
-            <AppProvider>
-              <App />
-            </AppProvider>
-          </Provider>
-        </QueryClientProvider>
-      </BrowserRouter>
-    </GoogleOAuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <GoogleOAuthProvider clientId={clientId}>
+        <BrowserRouter>
+            <Provider store={store}>
+              <AppProvider>
+                <App />
+              </AppProvider>
+            </Provider>
+        </BrowserRouter>
+      </GoogleOAuthProvider>
+    </QueryClientProvider>
   </React.StrictMode>
 )

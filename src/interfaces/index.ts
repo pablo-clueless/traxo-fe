@@ -1,7 +1,7 @@
 import { ChangeEvent, FocusEvent, MouseEvent, ReactNode } from "react"
 
 export interface InputProps {
-    label: string
+    label: string | JSX.Element
     type: string
     name: string
     value?: string | number

@@ -1,29 +1,22 @@
 import React, { Suspense, useEffect } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
+import "react-toastify/dist/ReactToastify.min.css";
 
-import { About, Contact, Home, Profile, Signup } from './pages'
 import { Footer, Loader, Login, Navbar } from './components'
 import { useAppContext } from './hooks'
+import Router from './Router'
 
 const App = () => {
   const { currentMode, isClicked } = useAppContext()
 
   return (
     <div className={`w-screen ${currentMode === 'dark' ? 'dark' : ''}`}>
+      <ToastContainer />
       <Navbar />
       <Suspense fallback={<Loader />}>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/signup' element={<Signup />} />
-
-          {/* proctected routes */}
-          <Route path='/user' element={<Profile />} />
-        </Routes>
+        <Router />
       </Suspense>
       <Footer />
-
       {isClicked.login && <Login />}
     </div>
   )
