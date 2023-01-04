@@ -1,4 +1,4 @@
-import { ChangeEvent, FocusEvent, MouseEvent, ReactNode } from "react"
+import { ChangeEvent, MouseEvent, ReactNode } from "react"
 
 export interface InputProps {
     label: string | JSX.Element
@@ -27,4 +27,11 @@ export interface ButtonProps {
     onClick?: (e: MouseEvent) => void
     to?: string
     className?: string
+}
+
+export interface SocketData {
+    id: string
+    message: string
+    date: Date | string
+    isRead: boolean
 }

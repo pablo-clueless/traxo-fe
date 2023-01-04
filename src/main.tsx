@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
 
+import { SocketProvider } from './contexts/SocketContext'
 import { AppProvider } from './contexts/AppContext'
 import { store } from './store/store'
 import App from './App'
@@ -19,9 +20,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <GoogleOAuthProvider clientId={clientId}>
         <BrowserRouter>
             <Provider store={store}>
-              <AppProvider>
-                <App />
-              </AppProvider>
+              <SocketProvider>
+                <AppProvider>
+                  <App />
+                </AppProvider>
+              </SocketProvider>
             </Provider>
         </BrowserRouter>
       </GoogleOAuthProvider>

@@ -15,14 +15,14 @@ export const AppProvider:React.FC<IChildren> = ({children}) => {
 
     const handleClicked = (clicked: string) => setIsClicked({...isClicked, [clicked]: true})
 
-    const handleUnlicked = (clicked: string) => setIsClicked({...isClicked, [clicked]: false})
+    const handleUnclicked = (clicked: string) => setIsClicked({...isClicked, [clicked]: false})
 
     const setMode = (mode: string) => {
         setCurrentMode(mode)
         localStorage.setItem('mode', JSON.stringify(mode))
     }
 
-    const values = {isClicked, handleClicked, handleUnlicked, currentMode, setMode}
+    const values = {isClicked, handleClicked, handleUnclicked, currentMode, setMode}
     return (
         <AppContext.Provider value={values}>
             {children}

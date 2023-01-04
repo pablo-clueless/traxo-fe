@@ -1,21 +1,19 @@
-import React, { ChangeEvent, FormEvent, MouseEvent, useState } from 'react'
+import React, { FormEvent, MouseEvent } from 'react'
 import { useMutation, useQueryClient } from 'react-query'
 import { GrFacebook, GrGoogle } from 'react-icons/gr'
 import { useGoogleLogin } from '@react-oauth/google'
 import { toast } from 'react-toastify'
-import { AxiosError } from 'axios'
 
-import { loginUser } from '../../services'
-import { useAppContext } from '../../hooks'
-import { Backdrop, Button, InputField, Loader, Spinner } from '../'
+import { loginUser } from '../../services/auth'
+import { useAppContext, useFormInputs } from '../../hooks'
+import { Backdrop, Button, InputField, Spinner } from '../'
 
 const clientId = import.meta.env.VITE_CLIENT_ID as string
 const initialState = { email: '', password: '' }
 
 const Login = () => {
-    const { handleUnlicked } = useAppContext()
-    const [credentials, setCredentials] = useState<typeof initialState>(initialState)
-    const { email, password } = credentials
+    const { handleUnclicked } = useAppContext()
+    const {inputs, handleChange, reset} = useFormInputs(initialState)
     const queryClient = useQueryClient()
     const { isLoading, mutate } = useMutation(loginUser, {
         onSuccess: (data) => console.log(data),
@@ -26,17 +24,13 @@ const Login = () => {
         onSettled: () => queryClient.invalidateQueries('login')
     })
 
-    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>)=> {
-        setCredentials({...credentials, [e.target.name]: e.target.value})
-    }
-
     const handleSubmit = async(e: FormEvent) => {
         e.preventDefault()
-        mutate(credentials)
+        mutate(inputs)
     }
 
   return (
-    <Backdrop onClose={() => handleUnlicked('login')}>
+    <Backdrop onClose={() => handleUnclicked('login')}>
         <div onClick={(e: MouseEvent) => e.stopPropagation()} className='w-4/5 max-w-[600px] bg-white rounded-[4px]'>
             <div className='w-full h-full flex flex-col items-center py-5 px-3'>
                 <p className='font-semibold text-2xl text-primary'>Welcome Back</p>

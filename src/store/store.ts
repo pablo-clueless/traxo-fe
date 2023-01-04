@@ -4,10 +4,12 @@ import storage from 'redux-persist/lib/storage'
 import thunk from 'redux-thunk'
 
 // import reducers here
-import authReducer from './slices/auth'
+import auth from './slices/auth'
+import notification from './slices/notification'
 
 const rootReducer = combineReducers({
-    auth: authReducer,
+    auth,
+    notification,
 })
 
 const persistConfig = {key: 'root', storage}

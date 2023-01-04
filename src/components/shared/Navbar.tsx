@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { FiUser } from 'react-icons/fi'
 
@@ -11,9 +11,15 @@ import { useAppContext } from '../../hooks'
 const Navbar = () => {
   const { isLoggedIn, user } = useAppSelector(store => store.auth)
   const { handleClicked } = useAppContext()
+  const [scrolled, setScrolled] = useState<boolean>(false)
+
+  const handleScroll = () => {
+    const offset = window.scrollY
+    offset > 700 ? setScrolled(true) : setScrolled(false)
+  }
 
   return (
-    <div className='w-full flex items-center justify-between py-4 px-8 sticky top-0 left-0'>
+    <nav className={`w-full flex items-center justify-between py-4 px-8 top-0 left-0 ${scrolled ? 'fixed' : 'sticky'}`}>
       <Link to='/' className='w-24'>
         <img src={traxo_dark} alt="traxo logo" className='w-full object-cover' />
       </Link>
@@ -31,7 +37,7 @@ const Navbar = () => {
           </div>
         )}
       </div>
-    </div>
+    </nav>
   )
 }
 
