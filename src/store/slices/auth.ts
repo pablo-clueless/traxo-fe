@@ -1,25 +1,25 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 
-import { User } from '../../types'
+import { User } from 'types'
 
 interface IUser {
-    user: User | null
-    isLoggedIn: boolean
+ user: User | null
+ isLoggedIn: boolean
 }
 
 const initialState: IUser = {
-    user: null,
-    isLoggedIn: false
+ user: null,
+ isLoggedIn: false,
 }
 
 const authSlice = createSlice({
-    name: 'auth',
-    initialState,
-    reducers: {
-        login: () => {},
-        logout: () => {}
-    }
+ name: 'auth',
+ initialState,
+ reducers: {
+  login: () => {},
+  logout: () => {},
+ },
 })
 
-export const {login, logout} = authSlice.actions
+export const { login, logout } = authSlice.actions
 export default authSlice.reducer
