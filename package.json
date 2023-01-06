@@ -1,47 +1,58 @@
 {
-  "name": "traxo-fe",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "description": "The official repository of Traxo.",
-  "license": "MIT",
-  "contributors": [
-    "Samson Okunola",
-    "Williams Sam"
-  ],
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@react-oauth/google": "^0.5.1",
-    "@reduxjs/toolkit": "^1.9.1",
-    "axios": "^1.2.2",
-    "gapi-script": "^1.2.0",
-    "jwt-decode": "^3.1.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-google-login": "^5.2.2",
-    "react-icons": "^4.7.1",
-    "react-query": "^3.39.2",
-    "react-redux": "^8.0.5",
-    "react-router-dom": "^6.4.4",
-    "react-toastify": "^9.1.1",
-    "redux-persist": "^6.0.0",
-    "redux-thunk": "^2.4.2",
-    "socket.io-client": "^4.5.2",
-    "universal-cookie": "^4.0.4"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.17",
-    "@types/react-dom": "^18.0.6",
-    "@vitejs/plugin-react": "^2.1.0",
-    "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.19",
-    "tailwindcss": "^3.2.4",
-    "typescript": "^4.6.4",
-    "vite": "^3.1.0",
-    "vite-tsconfig-paths": "^4.0.3"
-  }
+	"name": "traxo-fe",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"description": "The official repository of Traxo.",
+	"license": "MIT",
+	"contributors": [
+		"Samson Okunola",
+		"Williams Samuel"
+	],
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview",
+		"format": "prettier . --write",
+		"prepare": "husky install",
+		"lint": "eslint src --color",
+		"lint-staged": "lint-staged --config .lintstagedrc.js"
+	},
+	"dependencies": {
+		"@react-oauth/google": "^0.5.1",
+		"@reduxjs/toolkit": "^1.9.1",
+		"axios": "^1.2.2",
+		"gapi-script": "^1.2.0",
+		"jwt-decode": "^3.1.2",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-google-login": "^5.2.2",
+		"react-icons": "^4.7.1",
+		"react-query": "^3.39.2",
+		"react-redux": "^8.0.5",
+		"react-router-dom": "^6.4.4",
+		"react-toastify": "^9.1.1",
+		"redux-persist": "^6.0.0",
+		"redux-thunk": "^2.4.2",
+		"socket.io-client": "^4.5.2",
+		"universal-cookie": "^4.0.4"
+	},
+	"devDependencies": {
+		"@types/react": "^18.0.17",
+		"@types/react-dom": "^18.0.6",
+		"@typescript-eslint/eslint-plugin": "^5.48.0",
+		"@typescript-eslint/parser": "^5.48.0",
+		"@vitejs/plugin-react": "^2.1.0",
+		"autoprefixer": "^10.4.13",
+		"eslint": "^8.31.0",
+		"eslint-plugin-react": "^7.31.11",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.1.0",
+		"postcss": "^8.4.19",
+		"prettier": "2.8.1",
+		"tailwindcss": "^3.2.4",
+		"typescript": "^4.6.4",
+		"vite": "^3.1.0",
+		"vite-tsconfig-paths": "^4.0.3"
+	}
 }
