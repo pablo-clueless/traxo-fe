@@ -16,7 +16,7 @@
 		"format": "prettier . --write",
 		"prepare": "husky install",
 		"lint": "eslint src --color",
-		"lint-staged": "lint-staged --config .lintstagedrc.js"
+		"lint-staged": "lint-staged --config .lintstagedrc.cjs"
 	},
 	"dependencies": {
 		"@react-oauth/google": "^0.5.1",
