@@ -1,24 +1,25 @@
 
 
 export type User = {
-    userId: string
+    accessType: string
+    accountCreated: Date | string
+    companyName: string
+    createdAt: Date | string
+    email: string
     firstName: string
     lastName: string
-    email: string
-    userImage: string
-    companyId: string
-    companyName: string
-    companyImage: string
-    accessType: string
+    updatedAt: Date | string
+    userId: string
+    _id: string
 }
 
 export type Employee = {
-    userId: string
+    email: string
     firstName: string
     lastName: string
-    email: string
-    userImage: string
     subscriptions: Array<Subscriptions>
+    userId: string
+    userImage: string
 }
 
 export type Company = {

@@ -19,7 +19,7 @@ const Footer = () => {
     </div>
     {FOOTER_LINKS.map((item, index: number) => (
      <div key={index} className="flex flex-col gap-4">
-      <p className="w-[300px] text-white text-xl font-medium">{item.heading}</p>
+      <p className="w-[300px] text-white text-2xl font-bold">{item.heading}</p>
       <div className="flex flex-col gap-2">
        {item.links.map((link, index: number) => (
         <Link

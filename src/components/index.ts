@@ -9,3 +9,6 @@ export {default as Login} from './shared/Login'
 export {default as Navbar} from './shared/Navbar'
 export {default as Pagination} from './shared/Pagination'
 export {default as Spinner} from './shared/Spinner'
+
+// admin
+export { default as AuthRoutes } from './admin/AuthRoutes'
