@@ -1,4 +1,5 @@
 import axios, { AxiosHeaders } from 'axios'
+// import Cookies from 
 
 import { EmployeeCredentials, LoginCredentials, SignupCredentials } from '../interfaces/auth'
 import { Employee } from '../types'
