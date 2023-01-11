@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 import { FiBell, FiUser } from 'react-icons/fi'
 
 import { useAppContext, useAppSelector } from 'hooks'
+import { NAVLINKS } from 'constants/NAV-LINKS'
 import { traxo_dark } from 'assets'
 import Button from './Button'
 
@@ -28,12 +29,18 @@ const Navbar = () => {
       <Link to='/' className='w-24'>
         <img src={traxo_dark} alt="traxo logo" className='w-full object-cover' />
       </Link>
-      <div></div>
+      <div className='flex items-center gap-4'>
+        {NAVLINKS.map((_, index) => (
+          <NavLink key={index} to={_.link} className={({isActive}) => isActive ? 'font-semibold text-primary' : 'font-semibold text-black hover:text-gray-500'}>
+            {_.title}
+          </NavLink>
+        ))}
+      </div>
       <div>
         {!isLoggedIn ? (
           <div className='flex items-center gap-4'>
+            <Button label='Open an Acccount' to='/signup' />
             <Button label='Sign In' type='button' onClick={() => handleClicked('login')} />
-            <Button label='Sign Up' to='/signup' />
           </div>
         ) : (
           <div className='flex items-center gap-4'>

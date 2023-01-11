@@ -1,15 +1,15 @@
 export const FOOTER_LINKS = [
     {
-        "heading": "Product",
+        "heading": "Products",
         "links": [
             { "title": "Overview", target: "" },
             { "title": "Business Account", target: "" },
-            { "title": "Credit Card", target: "" },
+            { "title": "Cards", target: "" },
             { "title": "Expense Tracking", target: "" },
             { "title": "Budget Planning", target: "" },
             { "title": "Subscriptions & Bills", target: "" },
-            { "title": "Pro Access", target: "" },
-            { "title": "Security", target: "" },
+            // { "title": "Pro Access", target: "" },
+            // { "title": "Security", target: "" },
         ]
     },
     {

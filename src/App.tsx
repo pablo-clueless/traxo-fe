@@ -2,7 +2,7 @@ import React, { Suspense, useEffect } from 'react'
 import { ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.min.css"
 
-import { Footer, Loader, Login, Navbar } from 'components'
+import { Footer, Loader, Login, Navbar, Notifications } from 'components'
 import { useAppContext, useAppDispatch } from 'hooks'
 import { login } from 'store/slices/auth'
 import Router from 'Router'
@@ -19,7 +19,7 @@ const App = () => {
   },[])
 
   return (
-    <div className={`w-screen ${currentMode === 'dark' ? 'dark' : ''}`}>
+    <div className={`w-screen ${currentMode === 'dark' ? 'dark relative' : 'relative'}`}>
       <ToastContainer />
       <Navbar />
       <Suspense fallback={<Loader />}>
@@ -27,6 +27,7 @@ const App = () => {
       </Suspense>
       <Footer />
       {isClicked.login && <Login />}
+      {isClicked.notifications && <Notifications />}
     </div>
   )
 }
