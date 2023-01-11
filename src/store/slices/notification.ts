@@ -1,13 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 import { SocketData } from '../../interfaces'
+import { NOTIFICATIONS } from 'constants/test'
 
 interface Notifications {
     notifications: Array<SocketData>
 }
 
 const initialState:Notifications = {
-    notifications: []
+    notifications: NOTIFICATIONS
 }
 
 const notifications = createSlice({

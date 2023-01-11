@@ -20,6 +20,8 @@ specifiers:
   prettier: 2.8.1
   react: ^18.2.0
   react-dom: ^18.2.0
+  react-facebook-pixel: ^1.0.4
+  react-ga4: ^1.4.1
   react-google-login: ^5.2.2
   react-icons: ^4.7.1
   react-query: ^3.39.2
@@ -43,6 +45,8 @@ dependencies:
   jwt-decode: 3.1.2
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-facebook-pixel: 1.0.4
+  react-ga4: 1.4.1
   react-google-login: 5.2.2_biqbaboplfbrettd7655fr4n2y
   react-icons: 4.7.1_react@18.2.0
   react-query: 3.39.2_biqbaboplfbrettd7655fr4n2y
@@ -2634,6 +2638,14 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-facebook-pixel/1.0.4:
+    resolution: {integrity: sha512-givZY8MS0v/mdbRzvcvouBo/j0TtDiu/93f4gIjJXwDDgwlf6bYUiQvb2qcqjluOOD/hIKUQHNYLNsSOnoEklg==}
+    dev: false
+
+  /react-ga4/1.4.1:
+    resolution: {integrity: sha512-ioBMEIxd4ePw4YtaloTUgqhQGqz5ebDdC4slEpLgy2sLx1LuZBC9iYCwDymTXzcntw6K1dHX183ulP32nNdG7w==}
     dev: false
 
   /react-google-login/5.2.2_biqbaboplfbrettd7655fr4n2y:
